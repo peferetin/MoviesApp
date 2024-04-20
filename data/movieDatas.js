@@ -1,4 +1,4 @@
-const MovieDatas = [
+const movieDatas = [
     {
         id: 1,
         title: "The Shawshank Redemption",
@@ -6,7 +6,8 @@ const MovieDatas = [
         director: "Frank Darabont",
         duration: "2h 22min",
         genre: ["Crime", "Drama"],
-        rate: 9.3
+        rate: 9.3,
+        image: './shawshank.webp',
     },
     {
         id: 2,
@@ -15,7 +16,9 @@ const MovieDatas = [
         director: "Francis Ford Coppola",
         duration: "2h 55min",
         genre: ["Crime", "Drama"],
-        rate: 9.2
+        rate: 9.2,
+        image: './godfather.png.webp',
+
     },
     {
         id: 3,
@@ -24,7 +27,8 @@ const MovieDatas = [
         director: "Christopher Nolan",
         duration: "2h 32min",
         genre: ["Action", "Crime", "Drama", "Thriller"],
-        rate: 9.0
+        rate: 9.0,
+        image: './darkknight.jpeg',
     },
     {
         id: 4,
@@ -400,8 +404,4 @@ const MovieDatas = [
 
 ]
 
-usersRouter.get('/users/:userName', async (req, res) => {
-    const { userName } = req.params
-    const userByName = await User.findOne({ name: userName })
-    return res.json(userByName)
-})
+export default movieDatas;
