@@ -8,7 +8,8 @@ const movieSchema = new Schema({
     duration: String,
     genre: String,
     rate: Number,
-    url: String
+    url: String,
+    image: String
 
 });
 

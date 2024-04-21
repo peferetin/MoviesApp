@@ -37,7 +37,8 @@ const movieDatas = [
         director: "Sidney Lumet",
         duration: "1h 36min",
         genre: ["Crime", "Drama"],
-        rate: 8.9
+        rate: 8.9,
+        image: './12-angry-men-anniversary.webp',
 
     },
 
@@ -48,7 +49,8 @@ const movieDatas = [
         director: "Steven Spielberg",
         duration: "3h 15min",
         genre: ["Biography", "Drama", "History"],
-        rate: 8.9
+        rate: 8.9,
+        image: './schindlers.jpg',
     },
 
     {
@@ -58,7 +60,8 @@ const movieDatas = [
         director: "Peter Jackson",
         duration: "3h 21min",
         genre: ["Adventure", "Drama", "Fantasy"],
-        rate: 8.9
+        rate: 8.9,
+        image: './lordoftheringreturn.jpg',
     },
 
     {
@@ -68,7 +71,8 @@ const movieDatas = [
         director: "Quentin Tarantino",
         duration: "2h 34min",
         genre: ["Crime", "Drama"],
-        rate: 8.9
+        rate: 8.9,
+        image: './pulpfiction.jpg',
     },
 
     {
@@ -78,7 +82,8 @@ const movieDatas = [
         director: "Peter Jackson",
         duration: "2h 58min",
         genre: ["Adventure", "Drama", "Fantasy"],
-        rate: 8.8
+        rate: 8.8,
+        image: './lordoftheringfellowship.jpg',
     },
 
     {
@@ -88,7 +93,8 @@ const movieDatas = [
         director: "Robert Zemeckis",
         duration: "2h 22min",
         genre: ["Drama", "Romance"],
-        rate: 8.8
+        rate: 8.8,
+        image: './forestgump.jpeg',
     },
 
     {
@@ -98,7 +104,8 @@ const movieDatas = [
         director: "David Fincher",
         duration: "2h 19min",
         genre: ["Drama"],
-        rate: 8.8
+        rate: 8.8,
+        image: './fightclub.jpg',
     },
 
     {
@@ -108,7 +115,8 @@ const movieDatas = [
         director: "Christopher Nolan",
         duration: "2h 28min",
         genre: ["Action", "Adventure", "Sci-Fi", "Thriller"],
-        rate: 8.8
+        rate: 8.8,
+        image: './inception.jpg',
     },
 
     {
@@ -118,7 +126,8 @@ const movieDatas = [
         director: "Peter Jackson",
         duration: "2h 59min",
         genre: ["Adventure", "Drama", "Fantasy"],
-        rate: 8.7
+        rate: 8.7,
+        image: './lordoftheringtwotowers.jpg',
     },
 
     {
