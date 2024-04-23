@@ -3,7 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import moviesRouter from './routes/moviesRouter.js';
-import authRouter from './routes/authRouter.js';
+// import authRouter from './routes/authRouter.js';
 
 
 
