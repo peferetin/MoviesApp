@@ -60,4 +60,13 @@ moviesRouter.delete('/movies/:id', async (req, res) => {
 
 });
 
+moviesRouter.delete('/deletedMovie/:_id', async (req, res) => {
+    try {
+        const movies = await Movie.deleteMany();
+        res.json(movies);
+    } catch (error) {
+        res.json(error);
+    }
+});
+
 export default moviesRouter;

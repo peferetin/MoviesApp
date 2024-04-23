@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import moviesRouter from './routes/moviesRouter.js';
+import authRouter from './routes/authRouter.js';
 
 
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(moviesRouter);
+// app.use(authRouter);
 app.use(express.static('public'));
 
 const PORT = process.env.PORT || 5001;
