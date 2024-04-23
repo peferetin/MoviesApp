@@ -26,7 +26,8 @@ moviesRouter.get('/movies/id/:id', async (req, res) => {
 });
 moviesRouter.get('/movies/title/:title', async (req, res) => {
     const { title } = req.params;
-    const searchByTitle = await Movie.findOne({ title: title })
+    // const searchByTitle = await Movie.findOne({ title: title })
+    const searchByTitle = await Movie.findOne({ title: { $regex: new RegExp(title, 'i') } })
     return res.json(searchByTitle)
 })
 
