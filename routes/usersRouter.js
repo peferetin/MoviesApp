@@ -1,5 +1,6 @@
 import express from 'express';
-import User from '../models/user.js';
+import User from '../models/userModel.js';
+
 
 
 
@@ -19,6 +20,7 @@ userRouter.get('/users/:id', async (req, res) => {
         return res.status(404).json({ message: "User not found" });
     }
 });
+
 
 userRouter.post('/users', async (req, res) => {
     const newUser = new User({

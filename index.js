@@ -7,7 +7,10 @@ import authRouter from './routes/authRouter.js';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
+import upload from './middleware/uploadFile.js';
+import userRouter from './routes/usersRouter.js';
 import User from './models/userModel.js';
+
 
 
 
@@ -19,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(moviesRouter);
 app.use(authRouter);
+app.use(userRouter)
 app.use(express.static('public'));
 app.use('images', express.static('public/images'));
 
@@ -28,21 +32,10 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'public/images');
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + file.originalname.split(' ').pop());
-    },
-});
 
 app.get('/', (req, res) => {
     res.json('Welcome to Movie Application API!');
 });
-
-
-const upload = multer({ storage: storage });
 
 app.post('/users', upload.single('image'), (req, res) => {
     const user = new User({

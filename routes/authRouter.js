@@ -1,27 +1,29 @@
 import { Router } from 'express';
-import User from '../models/userModel.js';
+import Users from '../models/userModel.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import upload from '../middleware/uploadFile.js';
+
 
 const authRouter = Router();
 
 
 authRouter.get('/users', async (req, res) => {
-    const users = await User.find();
+    const users = await Users.find();
     res.json(users);
 });
 
 
-authRouter.post('/register', async (req, res) => {
+authRouter.post('/register', upload.single('image'), async (req, res) => {
 
 
-    const emailExists = await User.findOne({ email: req.body.email, });
+    const emailExists = await Users.findOne({ email: req.body.email, });
     if (emailExists) {
         return res.status(400).json({ message: 'Email already exists' });
     }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    const user = new User({
+    const user = new Users({
         name: req.body.name,
         email: req.body.email,
         password: hashedPassword,
@@ -37,7 +39,7 @@ authRouter.post('/register', async (req, res) => {
 );
 
 authRouter.post('/login', async (req, res) => {
-    const validUser = await User.findOne
+    const validUser = await Users.findOne
         ({ email: req.body.email });
     if (!validUser) {
         return res.status(400).json({ message: 'Email is not found' });
