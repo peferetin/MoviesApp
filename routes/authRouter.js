@@ -29,6 +29,7 @@ authRouter.post('/register', upload.single('image'), async (req, res) => {
         password: hashedPassword,
         age: req.body.age,
         image: '/public/images/' + req.file.filename,
+        gender: req.body.gender,
     });
     user.save()
         .then((data) => {

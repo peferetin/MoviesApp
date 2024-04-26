@@ -41,8 +41,9 @@ app.post('/users', upload.single('image'), (req, res) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password,
+        // password: req.body.password,
         age: req.body.age,
+        gender: req.body.gender,
         image: './public/images/' + req.file.filename
 
     });
