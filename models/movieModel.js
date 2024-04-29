@@ -1,6 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 const movieSchema = new Schema({
+    // _id: Schema.Types.ObjectId, 
 
     title: String,
     year: Number,
@@ -13,6 +14,7 @@ const movieSchema = new Schema({
 
 });
 
+// Create a model from the schema and export it 
 const Movie = mongoose.model('Movie', movieSchema);
 
 export default Movie;

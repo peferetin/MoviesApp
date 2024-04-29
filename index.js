@@ -17,6 +17,7 @@ import User from './models/userModel.js';
 
 const app = express();
 
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -32,10 +33,10 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 
-
 app.get('/', (req, res) => {
     res.json('Welcome to Movie Application API!');
 });
+
 
 app.post('/users', upload.single('image'), (req, res) => {
     const user = new User({

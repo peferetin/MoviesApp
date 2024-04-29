@@ -1,7 +1,7 @@
 import User from '../models/userModel.js';
 import multer from 'multer';
 
-
+// Multer configuration for file upload to the server 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public/images');
@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now() + file.originalname.split(' ').pop());
     },
 });
-
+// Multer configuration for file upload to the server   
 const upload = multer({ storage: storage });
 
 export default upload;

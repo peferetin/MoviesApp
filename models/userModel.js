@@ -2,6 +2,8 @@ import mongoose, { Schema } from 'mongoose';
 
 const userSchema = new Schema({
 
+    // _id: Schema.Types.ObjectId,  // This is automatically created by MongoDB
+
     name: {
         type: String,
         required: true,
@@ -43,6 +45,8 @@ const userSchema = new Schema({
 
 
 });
+
+// Create a model from the schema and export it
 const User = mongoose.model('User', userSchema);
 
 export default User;
